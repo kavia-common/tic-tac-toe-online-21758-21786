@@ -1,0 +1,358 @@
+:root {
+  /* Colors from design system */
+  --color-adafb3: #adafb3;
+  --color-1d1d1f: #1d1d1f;
+  --color-ffffff: #ffffff;
+  --color-262629: #262629;
+  --color-ebebeb: #ebebeb;
+  --color-000000: #000000;
+  --color-f5f5f5: #f5f5f5;
+  --color-0047ff: #0047ff;
+  --color-e5e5e5: #e5e5e5;
+  --color-141414: #141414;
+  --color-1f1f1f: #1f1f1f;
+  --color-001754: #001754;
+  --color-e6e6e6: #e6e6e6;
+  --color-d8e3ff: #d8e3ff;
+  --color-ff00f5: #ff00f5;
+  --color-171717: #171717;
+  --color-176af6: #176af6;
+  --color-7b61ff: #7b61ff;
+  --color-2c2c2e: #2c2c2e;
+  --color-e5e5ea: #e5e5ea;
+  --color-cccccc: #cccccc;
+  --color-ff0000: #ff0000;
+  --color-e4e4e4: #e4e4e4;
+  --color-7939ff: #7939ff;
+
+  /* Typography tokens (Lexend as main) */
+  --font-lexend: "Lexend", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
+  --typo-17-size: 24px; --typo-17-weight: 700; --typo-17-line: 24px; --typo-17-letter: -0.24px; --typo-17-color: var(--color-f5f5f5);
+  --typo-18-size: 18px; --typo-18-weight: 500; --typo-18-line: 18px; --typo-18-letter: 0; --typo-18-color: var(--color-ffffff);
+  --typo-19-size: 18px; --typo-19-weight: 500; --typo-19-line: 18px; --typo-19-letter: 0; --typo-19-color: var(--color-ebebeb);
+  --typo-20-size: 24px; --typo-20-weight: 700; --typo-20-line: 24px; --typo-20-letter: -0.24px; --typo-20-color: var(--color-141414);
+  --typo-21-size: 18px; --typo-21-weight: 500; --typo-21-line: 18px; --typo-21-letter: 0; --typo-21-color: var(--color-1f1f1f);
+
+  /* Radii */
+  --radius-4: 4px;
+  --radius-6: 6px;
+  --radius-8: 8px;
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+  --radius-80: 80px;
+
+  /* Shadows mapped from design system */
+  --shadow-0: 0 1px 2px 0 #000e33;
+  --shadow-1: 0 1px 1px 0 #000e33;
+  --shadow-2: 0 3px 2px 0 #0047ff;
+  --shadow-3: 0 1.5px 1px 0 #001f70;
+  --shadow-4: 0 1px 0 #003bd4;
+  --shadow-5: 0 4px 4px 0 #000e33;
+  --shadow-6: 0 2.0376px 4.0751px 0 #000e33;
+  --shadow-7: 0 6.1127px 4.0751px 0 #0047ff;
+  --shadow-8: 0 3.0563px 2.0376px 0 #001f70;
+  --shadow-9: 0 2.0376px 0 #003bd4;
+
+  /* Spacing primitives (used where needed) */
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-18: 18px;
+  --space-24: 24px;
+  --space-44: 44px;
+  --space-50: 50px;
+
+  /* Calendar cell sizing based on 54x44 cells in Figma */
+  --cell-w: 54px;
+  --cell-h: 44px;
+  --cell-inner-w: 50px;
+  --cell-inner-h: 44px;
+
+  /* Borders */
+  --border-0-5: 0.5px solid var(--color-e5e5e5);
+  --border-2-white: 2px solid var(--color-ffffff);
+}
+
+/* Reset + base */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-adafb3);
+  font-family: var(--font-lexend);
+}
+
+.screen-regular {
+  width: 1200px;
+  height: 800px;
+  background: var(--color-adafb3);
+  border-radius: var(--radius-24);
+  overflow: hidden;
+  position: relative;
+  margin: 0 auto;
+}
+
+/* Card shells for Light and Dark variations shown in the Figma screen */
+.card {
+  width: 426px;
+  height: 396px;
+  border-radius: var(--radius-16);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+}
+
+.card.light {
+  background: var(--color-f5f5f5); /* style_79 */
+  box-shadow: var(--shadow-0);
+}
+
+.card.dark {
+  background: var(--color-1d1d1f); /* style_75 */
+  box-shadow: var(--shadow-0);
+}
+
+/* Header with navigation buttons and selectors */
+.header {
+  width: 378px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-80);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-1);
+}
+
+.nav-btn.dark { background: var(--color-262629); } /* style_76 */
+.nav-btn.light { background: var(--color-ffffff); } /* style_80 */
+
+.selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+}
+
+.selector .pill {
+  height: 44px;
+  border-radius: var(--radius-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-1);
+  padding: 0 12px;
+}
+
+.selector .pill.dark { background: var(--color-262629); } /* style_77 */
+.selector .pill.light { background: var(--color-ffffff); } /* style_81 */
+
+.selector .label.dark {
+  font-size: var(--typo-17-size);
+  font-weight: var(--typo-17-weight);
+  line-height: var(--typo-17-line);
+  letter-spacing: var(--typo-17-letter);
+  color: var(--typo-17-color);
+}
+
+.selector .label.light {
+  font-size: var(--typo-20-size);
+  font-weight: var(--typo-20-weight);
+  line-height: var(--typo-20-line);
+  letter-spacing: var(--typo-20-letter);
+  color: var(--typo-20-color);
+}
+
+/* Dropdown chevron dot (blue square 8x8) */
+.selector .chev {
+  width: 8px;
+  height: 8px;
+  background: var(--color-0047ff);
+  border-radius: 2px;
+}
+
+/* Days of week row */
+.dow {
+  width: 378px;
+  height: 44px;
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell-w));
+  grid-auto-rows: var(--cell-h);
+  column-gap: 0;
+}
+
+.dow .cell {
+  width: var(--cell-w);
+  height: var(--cell-h);
+  border-radius: var(--radius-4); /* style_9 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dow .cell .inner {
+  width: 49px; /* per Figma nested inner frame width */
+  height: var(--cell-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-4);
+}
+
+.dow .text.dark {
+  font-size: var(--typo-18-size);
+  font-weight: var(--typo-18-weight);
+  line-height: var(--typo-18-line);
+  letter-spacing: var(--typo-18-letter);
+  color: rgba(255,255,255,0.2); /* style_10 opacity mapping for DoW text in dark */
+}
+
+.dow .text.light {
+  font-size: var(--typo-21-size);
+  font-weight: var(--typo-21-weight);
+  line-height: var(--typo-21-line);
+  letter-spacing: var(--typo-21-letter);
+  color: var(--typo-21-color);
+}
+
+/* Weeks grid (4 rows of 44px tall) seen in screenshot subset; define general grid for consistency */
+.weeks {
+  width: 378px;
+  height: 236px;
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell-w));
+  grid-auto-rows: var(--cell-h);
+  row-gap: 0;
+  column-gap: 0;
+}
+
+/* Calendar day cell base */
+.day {
+  width: var(--cell-w);
+  height: var(--cell-h);
+  border-radius: var(--radius-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day .inner {
+  width: var(--cell-inner-w);
+  height: var(--cell-inner-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-6); /* style_11/78/82 share 6px */
+}
+
+/* Dark card states */
+.dark .day.disabled .inner {
+  border-radius: var(--radius-6); /* style_11 */
+}
+
+.dark .day.disabled .text {
+  font-size: var(--typo-18-size);
+  font-weight: var(--typo-18-weight);
+  line-height: var(--typo-18-line);
+  color: rgba(255,255,255,0.1); /* style_12 */
+}
+
+.dark .day.regular .inner {
+  background: var(--color-262629);
+  border: var(--border-0-5);  /* style_78 */
+  box-shadow: var(--shadow-1);
+}
+
+.dark .day.regular .text {
+  font-size: var(--typo-19-size);
+  font-weight: var(--typo-19-weight);
+  line-height: var(--typo-19-line);
+  color: var(--typo-19-color);
+}
+
+/* Today selected in dark */
+.dark .day.today .inner {
+  background: var(--color-0047ff);
+  border: var(--border-2-white);
+  border-radius: var(--radius-6);
+}
+
+.dark .day.today .text {
+  font-size: var(--typo-18-size);
+  font-weight: var(--typo-18-weight);
+  line-height: var(--typo-18-line);
+  color: var(--color-ffffff);
+}
+
+/* Light card states */
+.light .day.disabled .inner {
+  border-radius: var(--radius-6); /* style_11 analogue */
+}
+
+.light .day.disabled .text {
+  font-size: var(--typo-22-size);
+  font-weight: var(--typo-22-weight);
+  line-height: var(--typo-22-line);
+  color: var(--color-001754); /* typo_22 color */
+}
+
+.light .day.regular .inner {
+  background: var(--color-ffffff);
+  border: var(--border-0-5);  /* style_82 */
+  box-shadow: var(--shadow-1);
+  border-radius: var(--radius-6);
+}
+
+.light .day.regular .text {
+  font-size: var(--typo-21-size);
+  font-weight: var(--typo-21-weight);
+  line-height: var(--typo-21-line);
+  color: var(--typo-21-color);
+}
+
+/* Today selected in light */
+.light .day.today .inner {
+  background: var(--color-0047ff);
+  border: var(--border-2-white);
+  border-radius: var(--radius-6);
+}
+
+.light .day.today .text {
+  font-size: var(--typo-18-size);
+  font-weight: var(--typo-18-weight);
+  line-height: var(--typo-18-line);
+  color: var(--color-ffffff);
+}
+
+/* Utility: exact spacing replication for header content */
+.header .center {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 44px;
+}
+
+.header .center .pill + .pill {
+  margin-left: 12px;
+}
+
+/* Layout positions of the two cards inside the screen frame (using relative approximation since absolute Figma coords are outside 0,0 of screen export) */
+.layout-row {
+  position: absolute;
+  left: 64px;
+  top: 64px;
+  display: flex;
+  gap: 24px;
+}

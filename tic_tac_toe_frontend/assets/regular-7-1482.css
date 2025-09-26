@@ -1,0 +1,63 @@
+ /* Specific adjustments for Regular 7:1482 screen if needed */
+
+/* Ensure cards sit exactly with design spacing relative to screen frame */
+.screen-regular .layout-row {
+  left: 64px; /* chosen for visual spacing since Figma absolute coords are outside export base */
+  top: 64px;
+}
+
+/* Match header widths and gaps exactly as in figma (378px content area) */
+.card .header { width: 378px; gap: 0; }
+
+/* DoW and weeks are already 378px wide and 7*54px = 378px columns */
+.card .dow { margin-top: 0; }
+.card .weeks { margin-top: 0; }
+
+/* Minor text alignment tweaks to match center align in instances */
+.dow .text, .day .text { text-align: center; }
+
+/* Elevation nuances for light/dark nav buttons to match style shadows */
+.nav-btn.light { box-shadow: var(--shadow-1); }
+.nav-btn.dark { box-shadow: var(--shadow-1); }
+
+/* Precisely match border radii on cells */
+.day, .dow .cell { border-radius: var(--radius-4); }
+.day .inner { border-radius: var(--radius-6); }
+
+/* Override text colors in contexts to ensure exact token mapping */
+.card.dark .dow .text.dark { color: rgba(255,255,255,0.2); }
+.card.light .dow .text.light { color: var(--color-1f1f1f); }
+
+/* State color overrides for day numbers */
+.card.dark .day.regular .text { color: var(--color-ebebeb); }
+.card.light .day.regular .text { color: var(--color-1f1f1f); }
+.card.dark .day.disabled .text { color: rgba(255,255,255,0.1); }
+.card.light .day.disabled .text { color: var(--color-001754); }
+.card .day.today .text { color: var(--color-ffffff); }
+
+/* Borders for regular states */
+.card.dark .day.regular .inner { border: 0.5px solid var(--color-e5e5e5); }
+.card.light .day.regular .inner { border: 0.5px solid var(--color-e5e5e5); }
+
+/* Today selected border */
+.card .day.today .inner { border: 2px solid var(--color-ffffff); }
+
+/* Month/Year label typography exactness */
+.selector .label.dark {
+  font-family: var(--font-lexend);
+  font-size: var(--typo-17-size);
+  font-weight: var(--typo-17-weight);
+  line-height: var(--typo-17-line);
+  letter-spacing: var(--typo-17-letter);
+}
+
+.selector .label.light {
+  font-family: var(--font-lexend);
+  font-size: var(--typo-20-size);
+  font-weight: var(--typo-20-weight);
+  line-height: var(--typo-20-line);
+  letter-spacing: var(--typo-20-letter);
+}
+
+/* Background of the entire screen from style_0 */
+.screen-regular { background: var(--color-adafb3); border-radius: var(--radius-24); }
