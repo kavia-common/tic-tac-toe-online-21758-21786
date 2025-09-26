@@ -1,0 +1,319 @@
+:root {
+  /* Screen uses tokens defined in common.css */
+}
+
+/* Screen frame style_0 */
+.screen.double-view-calendar-38-682 {
+  position: relative;
+  width: 1200px;
+  height: 800px;
+  margin: 0 auto;
+  background: var(--color-adafb3);
+  border-radius: var(--radius-24);
+  overflow: hidden;
+  font-family: var(--font-lexend);
+}
+
+/* Calendar card (style_79) */
+.card.light {
+  position: absolute;
+  left: 387px; /* derived visible x within frame (aligning with prior 38-11401 visual) */
+  top: 202px;  /* derived visible y within frame */
+  width: 426px;
+  height: 396px;
+  background: var(--color-f5f5f5);
+  border-radius: var(--radius-16);
+  box-shadow: var(--shadow-0);
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+}
+
+/* Header area exact 378x44 */
+.card.light .header {
+  width: 378px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nav buttons (style_80) */
+.nav-btn.light {
+  width: 44px;
+  height: 44px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-80);
+  box-shadow: var(--shadow-1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0;
+  cursor: default;
+}
+
+/* Use background image for the right chevron to mirror figma icon (matching size/placement) */
+.nav-btn.next {
+  background-image: url("/assets/figmaimages/figma_image_38_10604_7_583.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 8px 16px;
+}
+
+/* Center selector (month/year) */
+.selector {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 44px;
+}
+
+.pill {
+  height: 44px;
+  min-width: 90px;
+  border-radius: var(--radius-6);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  box-shadow: var(--shadow-1);
+  background: var(--color-ffffff);
+}
+
+/* Month active pill (style_86) has 2px blue border */
+.pill.month.active {
+  border: 2px solid var(--color-0047ff);
+}
+
+/* Labels */
+.pill .label.light {
+  font-size: var(--typo-20-size);
+  font-weight: var(--typo-20-weight);
+  line-height: var(--typo-20-line);
+  letter-spacing: var(--typo-20-letter);
+  color: var(--typo-20-color);
+}
+
+/* Chevron dot squares (style_8) 8x8 */
+.selector .chev {
+  width: 8px;
+  height: 8px;
+  background: var(--color-0047ff);
+  border-radius: 2px;
+  display: inline-block;
+  margin-left: 6px;
+}
+.selector .chev.up { transform: rotate(0deg); }
+.selector .chev.down { transform: rotate(0deg); }
+
+/* Days of week (exact 378x44 grid: 7x54) */
+.dow {
+  width: 378px;
+  height: 44px;
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell-w));
+  grid-auto-rows: var(--cell-h);
+}
+
+.dow .cell {
+  width: var(--cell-w);
+  height: var(--cell-h);
+  border-radius: var(--radius-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dow .cell .inner {
+  width: 49px;
+  height: var(--cell-h);
+  border-radius: var(--radius-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dow .text.light {
+  font-size: var(--typo-21-size);
+  font-weight: var(--typo-21-weight);
+  line-height: var(--typo-21-line);
+  letter-spacing: var(--typo-21-letter);
+  color: var(--typo-21-color);
+}
+
+/* Weeks grid (378x236; 7x54 by 5 rows -> 270px, but figma height used 236 for visible area) */
+.weeks {
+  width: 378px;
+  height: 236px;
+  display: grid;
+  grid-template-columns: repeat(7, var(--cell-w));
+  grid-auto-rows: var(--cell-h);
+}
+
+/* Day cells */
+.day {
+  width: var(--cell-w);
+  height: var(--cell-h);
+  border-radius: var(--radius-4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner frames by state */
+.day .inner {
+  width: var(--cell-inner-w);
+  height: var(--cell-inner-h);
+  border-radius: var(--radius-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Disabled (other month) style_11 + typo_22 */
+.day.disabled .inner {
+  /* radius handled; background transparent */
+}
+.day.disabled .text {
+  font-size: var(--typo-22-size);
+  font-weight: var(--typo-22-weight);
+  line-height: var(--typo-22-line);
+  color: var(--color-001754);
+}
+
+/* Regular (style_82) */
+.day.regular .inner {
+  background: var(--color-ffffff);
+  border: 0.5px solid var(--color-e5e5e5);
+  box-shadow: var(--shadow-1);
+  border-radius: var(--radius-6);
+}
+.day.regular .text {
+  font-size: var(--typo-21-size);
+  font-weight: var(--typo-21-weight);
+  line-height: var(--typo-21-line);
+  color: var(--typo-21-color);
+}
+
+/* Today selected (style_14) */
+.day.today .inner {
+  background: var(--color-0047ff);
+  border: 2px solid var(--color-ffffff);
+  border-radius: var(--radius-6);
+}
+.day.today .text {
+  font-size: var(--typo-18-size);
+  font-weight: var(--typo-18-weight);
+  line-height: var(--typo-18-line);
+  color: var(--color-ffffff);
+}
+
+/* Dropdown list container (outer shadow style_87, inner list style_18) */
+.dropdown {
+  position: absolute;
+  left: 508px;
+  top: 272px;
+  width: 137px;
+  height: 248px;
+  border-radius: var(--radius-6);
+  background: transparent; /* outer host */
+  box-shadow: var(--shadow-5); /* style_87 */
+}
+
+/* Inner list panel (style_18) */
+.dropdown .dropdown-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 137px;
+  height: 248px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-6);
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px;
+}
+
+/* Rows (each 32px height) */
+.dropdown .row {
+  height: 32px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px; /* text x alignment */
+}
+
+.dropdown .row .text {
+  font-size: 18px; /* typo_26 */
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0;
+  color: var(--color-1f1f1f); /* style_20 */
+}
+
+/* Active month row (April) uses typo_27 color_176af6 */
+.dropdown .row.active .text {
+  color: var(--color-176af6);
+}
+
+/* Dividers as vertical rectangles (style_33 and style_34) */
+.dropdown .divider.left {
+  position: absolute;
+  left: 131px;
+  top: 12px;
+  width: 2px;
+  height: 224px;
+  background: rgba(0, 0, 0, 0.06); /* style_33 */
+  border-radius: 8px;
+}
+
+.dropdown .divider.right {
+  position: absolute;
+  left: 131px;
+  top: 12px;
+  width: 2px;
+  height: 148px;
+  background: rgba(31, 31, 31, 0.2); /* style_34 */
+  border-radius: 8px;
+}
+
+/* Decorative hand component positioned per figma */
+.hand {
+  position: absolute;
+  left: 560px;
+  top: 427px;
+  width: 72px;
+  height: 72px;
+}
+
+.hand .hand-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 72px;
+  height: 72px;
+  display: block;
+}
+
+.hand .hand-icon {
+  position: absolute;
+  left: 24px;
+  top: 24px;
+  width: 16px;
+  height: 20px;
+  display: block;
+}
+
+/* Accessibility and reset for images inside buttons */
+.nav-btn img {
+  display: block;
+  width: 8px;
+  height: 16px;
+}
+
+/* Ensure no default button styles interfere */
+button.nav-btn {
+  background-clip: padding-box;
+}
