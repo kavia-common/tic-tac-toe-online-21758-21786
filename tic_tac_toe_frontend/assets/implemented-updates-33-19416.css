@@ -1,0 +1,54 @@
+:root {
+  /* Map design system tokens used in this screen for clarity (already defined in common.css) */
+  /* Colors: --color-ffffff (style_39 background), --color-141414 (style_19 background proxy for text color token in typo_35) */
+  /* Border radius: --radius-24 for style_39 */
+  /* Typography typo_35: size 72px, weight 700, line-height 108px, letter-spacing -0.72px, color var(--color-141414) */
+}
+
+/* Screen frame per style_39: white background, 24px radius */
+.screen.implemented-updates-33-19416 {
+  position: relative;
+  width: 2200px;
+  height: 1200px;
+  margin: 0 auto;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-24);
+  overflow: hidden;
+  font-family: var(--font-lexend);
+}
+
+/* Text block 33:19418
+   Figma coords: x -1813, y 958 inside the original doc; within exported frame we place as absolute using provided width/height.
+   Dimensions: width 1792, height 540
+   Typography: typo_35 (72px, 700, 108px line-height, letter-spacing -0.72)
+   Color: from typo_35 -> color_141414
+*/
+.updates-text {
+  position: absolute;
+  left: 200px; /* Adjusted to ensure visibility within the 2200x1200 frame */
+  top: 120px;
+  width: 1792px;
+  height: 540px;
+  margin: 0;
+  padding: 0;
+  color: var(--color-141414);
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 108px;
+  letter-spacing: -0.72px;
+  text-align: left;
+}
+
+/* Image 33:19506
+   Figma coords: width 162, height 162
+*/
+.updates-image {
+  position: absolute;
+  left: 1020px; /* Placed to the right/below the text in a sensible static composition */
+  top: 720px;
+  width: 162px;
+  height: 162px;
+  object-fit: cover;
+  border-radius: 0; /* No radius specified in node */
+  display: block;
+}
