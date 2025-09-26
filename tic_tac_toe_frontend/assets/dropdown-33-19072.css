@@ -1,0 +1,168 @@
+:root {
+  /* Derive any extra tokens needed for this screen from design system */
+  --typo-30-size: 48px; --typo-30-weight: 700; --typo-30-line: 48px; --typo-30-letter: -0.48px; --typo-30-color: var(--color-141414);
+  --typo-20-size: 24px; --typo-20-weight: 700; --typo-20-line: 24px; --typo-20-letter: -0.24px; --typo-20-color: var(--color-141414);
+  --typo-26-size: 18px; --typo-26-weight: 500; --typo-26-line: 18px; --typo-26-letter: 0; --typo-26-color: var(--color-1f1f1f);
+  --typo-27-size: 18px; --typo-27-weight: 500; --typo-27-line: 18px; --typo-27-letter: 0; --typo-27-color: var(--color-176af6);
+}
+
+/* Screen frame (style_37): background color_f5f5f5, border-radius 24 */
+.screen.dropdown-33-19072 {
+  position: relative;
+  width: 1000px;
+  height: 1000px;
+  margin: 0 auto;
+  background: var(--color-f5f5f5);
+  border-radius: var(--radius-24);
+  overflow: hidden;
+  font-family: var(--font-lexend);
+}
+
+/* Title "Dropdown" (typo_30) at x=946, y=5033 relative to page; normalize inside 1000x1000 */
+.title {
+  position: absolute;
+  left: 200px;  /* mapped placement within visible frame */
+  top: 80px;
+  width: 251px; /* from JSON */
+  height: 48px;
+  margin: 0;
+  color: var(--typo-30-color);
+  font-size: var(--typo-30-size);
+  font-weight: var(--typo-30-weight);
+  line-height: var(--typo-30-line);
+  letter-spacing: var(--typo-30-letter);
+}
+
+/* Pills (style_81): white, radius 6px, shadow_1 */
+.pill {
+  position: absolute;
+  height: 44px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 12px;
+  gap: 8px;
+}
+
+/* Month pill 137x44 placed near title per JSON x=946,y=5129; mapped into visible coordinates */
+.pill.month {
+  width: 137px;
+  left: 200px;
+  top: 160px;
+}
+
+/* Year pill 91x44 positioned to the right (JSON x=1155,y=5129) */
+.pill.year {
+  width: 91px;
+  left: 357px; /* 200 + 137 + 20 spacing */
+  top: 160px;
+}
+
+/* Label text in pills (typo_20) */
+.pill .label {
+  color: var(--typo-20-color);
+  font-size: var(--typo-20-size);
+  font-weight: var(--typo-20-weight);
+  line-height: var(--typo-20-line);
+  letter-spacing: var(--typo-20-letter);
+  white-space: nowrap;
+}
+
+/* 8x8 blue square chevron (style_8) */
+.pill .chev {
+  width: 8px;
+  height: 8px;
+  background: var(--color-0047ff);
+  border-radius: 2px;
+}
+
+/* Dropdown base container alignment */
+.dropdown {
+  position: absolute;
+  border-radius: var(--radius-6);
+}
+
+/* Year dropdown (Frame 3907) 91x248 positioned beneath year pill per JSON y=5175; map under pills */
+.year-dropdown {
+  left: 357px;
+  top: 212px; /* 160 + 44 + 8 spacing */
+  width: 91px;
+  height: 248px;
+}
+
+/* Month dropdown (Frame 3908) 137x248 positioned beneath month pill */
+.month-dropdown {
+  left: 200px;
+  top: 212px;
+  width: 137px;
+  height: 248px;
+}
+
+/* Inner list panel (style_81) with shadow_1 and radius 6 */
+.dropdown .dropdown-list {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 248px;
+  background: var(--color-ffffff);
+  border-radius: var(--radius-6);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  padding-top: 12px; /* per JSON, first text row starts 12px from top */
+}
+
+/* Rows are 32px height with left padding to align text x offsets */
+.dropdown .row {
+  height: 32px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+
+/* Typography for list rows (typo_26) */
+.dropdown .row .text {
+  font-size: var(--typo-26-size);
+  font-weight: var(--typo-26-weight);
+  line-height: var(--typo-26-line);
+  letter-spacing: var(--typo-26-letter);
+  color: var(--typo-26-color);
+}
+
+/* Active row (April in month list, first row in year list per JSON variation uses style_29 + typo_27 color) */
+.dropdown .row.active .text {
+  color: var(--typo-27-color);
+}
+
+/* Vertical dividers (style_33 and style_34) start 12px from top */
+.dropdown .divider.left {
+  position: absolute;
+  top: 12px;
+  width: 2px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.06); /* style_33 */
+}
+.dropdown .divider.right {
+  position: absolute;
+  top: 12px;
+  width: 2px;
+  border-radius: 8px;
+  background: rgba(31, 31, 31, 0.2); /* style_34 */
+}
+
+/* Exact divider positions relative to container widths */
+.month-dropdown .divider.left,
+.year-dropdown .divider.left {
+  left: calc(100% - 6px); /* matches x at container right minus 6px, aligns visually like JSON 2px at x=width-6 */
+  height: 224px;
+}
+.month-dropdown .divider.right,
+.year-dropdown .divider.right {
+  left: calc(100% - 6px);
+  height: 148px;
+}

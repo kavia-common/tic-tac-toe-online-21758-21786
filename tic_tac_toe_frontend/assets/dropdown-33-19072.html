@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Dropdown - 33:19072</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./common.css">
+  <link rel="stylesheet" href="./dropdown-33-19072.css">
+</head>
+<body>
+  <div class="screen dropdown-33-19072" role="main" aria-label="Dropdown screen">
+    <!-- Title -->
+    <h1 class="title">Dropdown</h1>
+
+    <!-- Month control -->
+    <div class="pill month" role="button" aria-label="Month selector">
+      <span class="label">January</span>
+      <!-- Down icon as 8x8 blue square per style_8 -->
+      <span class="chev" aria-hidden="true"></span>
+    </div>
+
+    <!-- Year control -->
+    <div class="pill year" role="button" aria-label="Year selector">
+      <span class="label">2016</span>
+      <span class="chev" aria-hidden="true"></span>
+    </div>
+
+    <!-- Year dropdown (narrow panel 91x248) -->
+    <aside class="dropdown year-dropdown" aria-label="Year dropdown">
+      <div class="dropdown-list">
+        <div class="row active"><span class="text">2016</span></div>
+        <div class="row"><span class="text">2016</span></div>
+        <div class="row"><span class="text">2016</span></div>
+        <div class="row"><span class="text">2016</span></div>
+        <div class="row"><span class="text">2016</span></div>
+      </div>
+      <span class="divider left" aria-hidden="true"></span>
+      <span class="divider right" aria-hidden="true"></span>
+    </aside>
+
+    <!-- Month dropdown (wide panel 137x248) -->
+    <aside class="dropdown month-dropdown" aria-label="Month dropdown">
+      <div class="dropdown-list">
+        <div class="row"><span class="text">January</span></div>
+        <div class="row"><span class="text">February</span></div>
+        <div class="row"><span class="text">March</span></div>
+        <div class="row active"><span class="text">April</span></div>
+        <div class="row"><span class="text">May</span></div>
+      </div>
+      <span class="divider left" aria-hidden="true"></span>
+      <span class="divider right" aria-hidden="true"></span>
+    </aside>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
