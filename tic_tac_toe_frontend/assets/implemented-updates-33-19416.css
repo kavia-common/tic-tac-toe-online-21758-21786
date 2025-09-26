@@ -1,8 +1,5 @@
 :root {
-  /* Map design system tokens used in this screen for clarity (already defined in common.css) */
-  /* Colors: --color-ffffff (style_39 background), --color-141414 (style_19 background proxy for text color token in typo_35) */
-  /* Border radius: --radius-24 for style_39 */
-  /* Typography typo_35: size 72px, weight 700, line-height 108px, letter-spacing -0.72px, color var(--color-141414) */
+  /* This screen uses tokens defined in common.css. Additional screen-specific tokens can be added here if needed. */
 }
 
 /* Screen frame per style_39: white background, 24px radius */
@@ -11,22 +8,21 @@
   width: 2200px;
   height: 1200px;
   margin: 0 auto;
-  background: var(--color-ffffff);
-  border-radius: var(--radius-24);
+  background: var(--color-ffffff); /* color_ffffff */
+  border-radius: var(--radius-24);  /* 24px from style_39 */
   overflow: hidden;
   font-family: var(--font-lexend);
 }
 
 /* Text block 33:19418
-   Figma coords: x -1813, y 958 inside the original doc; within exported frame we place as absolute using provided width/height.
    Dimensions: width 1792, height 540
-   Typography: typo_35 (72px, 700, 108px line-height, letter-spacing -0.72)
-   Color: from typo_35 -> color_141414
+   Typography: typo_35 (72px size, 700 weight, 108px line-height, -0.72px letter-spacing, color color_141414)
+   The original node coordinates are outside the exported frame origin; we place content within the visible 2200x1200 area while preserving size.
 */
 .updates-text {
   position: absolute;
-  left: 200px; /* Adjusted to ensure visibility within the 2200x1200 frame */
-  top: 120px;
+  left: 204px;  /* a tight alignment to create 204px inset from left, balancing within 2200px width */
+  top: 120px;   /* vertical placement to give correct headroom inside 1200px height */
   width: 1792px;
   height: 540px;
   margin: 0;
@@ -37,18 +33,19 @@
   line-height: 108px;
   letter-spacing: -0.72px;
   text-align: left;
+  white-space: pre-line; /* honor explicit line breaks from Figma text */
 }
 
 /* Image 33:19506
-   Figma coords: width 162, height 162
+   Dimensions: 162 x 162
+   Position inside frame: place below the text block to avoid overlap; maintain static composition for this screen.
 */
 .updates-image {
   position: absolute;
-  left: 1020px; /* Placed to the right/below the text in a sensible static composition */
+  left: 1018px; /* visually center relative to 1792px text width and overall frame */
   top: 720px;
   width: 162px;
   height: 162px;
   object-fit: cover;
-  border-radius: 0; /* No radius specified in node */
   display: block;
 }
