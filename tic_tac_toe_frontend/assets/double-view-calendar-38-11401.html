@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Double-view calendar - 38:11401</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./common.css">
+  <link rel="stylesheet" href="./double-view-calendar-38-11401.css">
+</head>
+<body>
+  <div class="screen double-view-calendar-38-11401" role="main" aria-label="Double-view calendar">
+
+    <!-- Light Mode Calendar Card -->
+    <section class="card light" aria-label="Calendar">
+      <!-- Header -->
+      <div class="header">
+        <!-- Prev button -->
+        <button class="nav-btn light prev" aria-label="Previous month">
+          <img src="/assets/figmaimages/figma_image_38_11754_7_1816_7_1720_7_979.png" alt="" width="8" height="16" />
+        </button>
+
+        <div class="center">
+          <div class="selector">
+            <!-- Month pill (active) -->
+            <div class="pill month active">
+              <span class="label light">April</span>
+              <span class="chev up" aria-hidden="true"></span>
+            </div>
+            <!-- Year pill -->
+            <div class="pill year">
+              <span class="label light">2021</span>
+              <span class="chev down" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Next button -->
+        <button class="nav-btn light next" aria-label="Next month">
+          <!-- Right chevron rendered via CSS background for symmetry; no alt text -->
+        </button>
+      </div>
+
+      <!-- Days of week -->
+      <div class="dow">
+        <div class="cell"><div class="inner"><span class="text light">Mo</span></div></div>
+        <div class="cell"><div class="inner"><span class="text light">Tu</span></div></div>
+        <div class="cell"><div class="inner"><span class="text light">We</span></div></div>
+        <div class="cell"><div class="inner"><span class="text light">Th</span></div></div>
+        <div class="cell"><div class="inner"><span class="text light">Fr</span></div></div>
+        <div class="cell"><div class="inner"><span class="text light">Sa</span></div></div>
+        <div class="cell"><div class="inner"><span class="text light">Su</span></div></div>
+      </div>
+
+      <!-- Weeks grid -->
+      <div class="weeks">
+        <!-- Week 1 -->
+        <div class="day disabled"><div class="inner"><span class="text">29</span></div></div>
+        <div class="day disabled"><div class="inner"><span class="text">30</span></div></div>
+        <div class="day disabled"><div class="inner"><span class="text">31</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">1</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">2</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">3</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">4</span></div></div>
+        <!-- Week 2 -->
+        <div class="day regular"><div class="inner"><span class="text">5</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">6</span></div></div>
+        <div class="day today"><div class="inner"><span class="text">7</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">8</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">9</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">10</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">11</span></div></div>
+        <!-- Week 3 -->
+        <div class="day regular"><div class="inner"><span class="text">12</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">13</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">14</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">15</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">16</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">17</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">18</span></div></div>
+        <!-- Week 4 -->
+        <div class="day regular"><div class="inner"><span class="text">19</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">20</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">21</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">22</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">23</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">24</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">25</span></div></div>
+        <!-- Week 5 -->
+        <div class="day regular"><div class="inner"><span class="text">26</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">27</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">28</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">29</span></div></div>
+        <div class="day regular"><div class="inner"><span class="text">30</span></div></div>
+        <div class="day disabled"><div class="inner"><span class="text">1</span></div></div>
+        <div class="day disabled"><div class="inner"><span class="text">2</span></div></div>
+      </div>
+    </section>
+
+    <!-- Dropdown list (Month picker) -->
+    <aside class="dropdown" aria-label="Month dropdown">
+      <div class="dropdown-list">
+        <div class="row"><span class="text">January</span></div>
+        <div class="row"><span class="text">February</span></div>
+        <div class="row"><span class="text">March</span></div>
+        <div class="row active"><span class="text">April</span></div>
+        <div class="row"><span class="text">May</span></div>
+      </div>
+      <span class="divider left" aria-hidden="true"></span>
+      <span class="divider right" aria-hidden="true"></span>
+    </aside>
+
+    <!-- Decorative Hand component -->
+    <div class="hand" aria-hidden="true">
+      <img class="hand-bg" src="/assets/figmaimages/figma_image_38_11911_38_11389.png" alt="" width="72" height="72">
+      <img class="hand-icon" src="/assets/figmaimages/figma_image_38_11911_38_11390_2_599.png" alt="" width="16" height="20">
+    </div>
+
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

@@ -1,9 +1,9 @@
 (function () {
   'use strict';
 
-  // No interactions specified in Figma for this screen.
-  // Hook for future enhancements: toggling months/years could be wired here.
+  // No interactions specified in Figma for these static screens.
+  // Hooks for future enhancements: toggling months/years could be wired here.
 
-  // Example: noop to confirm script loaded
-  console.debug('app.js loaded for Regular 7:1482');
+  // Example: noop to confirm script loaded for multiple screens
+  console.debug('app.js loaded (static screens available: Regular 7:1482, Implemented updates 33:19416, Double-view calendar 38:11401)');
 })();
